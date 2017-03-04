@@ -1,4 +1,4 @@
-import requests
+from requests import get
 
 
 class is_JMG7173_live_Exception(Exception):
@@ -11,7 +11,7 @@ jmg7173_channel_url = (
 
 
 def is_JMG7173_live() -> bool:
-    r = requests.get(jmg7173_channel_url)
+    r = get(jmg7173_channel_url)
     if not r.ok:
         raise is_JMG7173_live_Exception(
             "Couldn't get JMG7173's Youtube Channel"

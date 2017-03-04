@@ -1,2 +1,5 @@
 requests[security]
+flask
+flask-redis
 flake8
+flake8-import-order-spoqa

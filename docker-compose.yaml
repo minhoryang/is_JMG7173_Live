@@ -1,0 +1,20 @@
+version: '2'
+services:
+  is_jmg7173_live:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - "REDIS_URL=redis://redis"
+    networks:
+      - front
+      - back
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - back
+networks:
+  front:
+  back:
